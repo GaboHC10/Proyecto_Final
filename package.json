@@ -1,20 +1,30 @@
 {
   "name": "proyecto-final",
   "version": "1.0.0",
-  "description": "An proyect developing with expressjs",
+  "description": "An proyect developed with expressjs",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon Index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GaboHC10/Proyecto_Final.git"
+  },
   "keywords": [
-    "api",
-    "res",
+    "node",
     "express",
-    "nodejs"
+    "jwt",
+    "mysql"
   ],
   "author": "Johan Gabriel Herrrera Casas",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GaboHC10/Proyecto_Final/issues"
+  },
+  "homepage": "https://github.com/GaboHC10/Proyecto_Final#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
   }
 }
