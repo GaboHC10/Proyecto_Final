@@ -1,15 +1,25 @@
+const morgan = require('morgan');
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res, next) => {
-    res.status(200);
-    res.send('Bienvenidos al Servidor');
-});
+const empleado = require('./empleado');
+const user = require('./user');
 
-app.get('/:nombre', (req, res, next) => {
-    req.params.name;
-    res.status(200).send('Estas en la página Nombre');
-});
+const auth = require('./Middleware/auth');
+const notFound = require('./Middleware/notFound');
+const index = require('./Middleware/Index');
+const cors = require('./Middleware/cors');
+
+app.use(cors);
+app.use(morgan('dev'));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+app.get('/', index);
+app.use('/user', user);
+app.use(auth);
+app.use('/empleado', empleado); 
+app.use(notFound);
 
 app.listen(process.env.PORT || 4000, () => {
     console.log('Server is Running...');
